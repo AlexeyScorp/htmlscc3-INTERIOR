@@ -1,0 +1,25 @@
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+	/* стили только для IE10 IE11 */
+	#container #featured_or_new .inside > article > div > div img {
+		position: absolute;
+		left: -7.5%;
+		top: -7.5%;
+	}
+
+	.inside {
+		position: relative;
+		width: 1170px;
+		margin: 0 auto;
+	}
+
+	.slider__box {
+		max-width: 1170px;
+		position: relative;
+	}
+
+	.slide__nav_slade {
+		left: calc( 50% - 100px );
+	}
+}
+
+

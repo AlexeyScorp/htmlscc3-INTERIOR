@@ -1,0 +1,124 @@
+@color_dark: #212121;
+@color_p: #6c6c6c;
+@color_nav: #8c8c8c;
+@color_bright: #fff;
+
+@color_h_blue: #1e88e5;
+@color_h_green: #43a047;
+@color_h_red: #e53935;
+
+@transparent: transparent;
+@inherit: inherit;
+
+
+
+@color_bright_white: #f6f9f9;
+@color_green: #1abb9c;
+
+@font_p_white: #d2d2d2;
+@font_h_dark: #484848;
+@bg_image: #828282;
+@main_blue: #15a4fa;
+
+
+@icon_bg_one: #5fc3ff;
+@icon_bg_two: #48baff;
+
+
+
+.button_nav() {
+  background: @color_bright;
+  transition: 0.5s;
+  -webkit-transition-property: color, background;
+  -moz-transition-property: color, background;
+  -o-transition-property: color, background;
+  transition-property: color, background;
+  box-shadow: 0 2px 4.85px 0.15px fadeOut(@color_dark, 70%);
+  -webkit-box-shadow: 0 2px 4.85px 0.15px fadeOut(@color_dark, 70%);
+  -moz-box-shadow: 0 2px 4.85px 0.15px fadeOut(@color_dark, 70%);
+
+  &:hover {
+    background: fadeOut(@color_bright, 50%);
+    color: @color_p;
+    text-shadow: 0 0 5px fadeOut(@color_dark, 70%);
+    cursor: pointer;
+    transform: scale(1.01);
+  }
+}
+
+.hover(@bg_main, @color_main, @bg_hover, @color_hover) {
+  background: @bg_main;
+  color: @color_main;
+  transition: 1s;
+  -webkit-transition-property: background, color, text-shadow;
+  -moz-transition-property: background, color, text-shadow;
+  -o-transition-property: background, color, text-shadow;
+  transition-property: background, color, text-shadow;
+
+  &:hover {
+    background: @bg_hover;
+    color: @color_hover;
+    box-shadow: 0 0 5px @bg_main;
+    -webkit-box-shadow: 0 0 5px @bg_main;
+    -moz-box-shadow: 0 0 5px @bg_main;
+    text-shadow: 0 0 5px @color_main;
+    cursor: pointer;
+  }
+}
+
+.box-sizing (@box-sizing_parameter) {
+  box-sizing: @box-sizing_parameter;
+  -moz-box-sizing: @box-sizing_parameter;
+  -webkit-box-sizing: @box-sizing_parameter;
+}
+
+.display_flex() {
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+// ----- RESPOND ------
+
+.respond (@device, @contend) {
+
+  //mobile s
+  & when (@device = mobile-s) {
+    @media screen and (max-width: 320px) { @contend (); }
+  }
+
+  //mobile m
+  & when (@device = mobile-m) {
+    @media screen and (min-width: 321px) and (max-width: 375px) { @contend (); }
+    //@media screen and (min-width: 321px) { @contend (); }
+  }
+
+  //mobile l
+  & when (@device = mobile-l) {
+    @media screen and (min-width: 376px) and (max-width: 425px) { @contend (); }
+    //@media screen and (min-width: 376px) { @contend (); }
+  }
+
+  //tablet
+  & when (@device = tablet) {
+    @media screen and (min-width: 426px) and (max-width: 768px) { @contend (); }
+    //@media screen and (min-width: 426px) { @contend (); }
+  }
+
+  //laptop
+  & when (@device = laptop) {
+    @media screen and (min-width: 768px) and (max-width: 1024px) { @contend (); }
+    //@media screen and (min-width: 768px) { @contend (); }
+  }
+
+  //laptop l
+  & when (@device = laptop-l) {
+    @media screen and (min-width: 1025px) and (max-width: 1440px) { @contend (); }
+    //@media screen and (min-width: 1025px) { @contend (); }
+  }
+
+  //desktop
+  & when (@device = desktop) {
+    @media screen and (min-width: 1441px) { @contend (); }
+  }
+}
